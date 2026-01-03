@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahrplan</title>
-    <meta name="author" content="Anton P. Braun and Felix Divo">
+    <meta name="author" content="Anton P. Braun and Felix Divo, adapted by Kim Brose">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,8 +14,8 @@
     <div class="schedule-container">
         <!-- Header -->
         <div class="header">
-            <div class="header-left">27.12.2025 – 30.12.2025</div>
-            <div class="header-right"><span class="c3-logo">&lt;&lt;39C3</span></div>
+            <div class="header-left">15.10.2025 – 18.10.2025</div>
+            <div class="header-right"><span class="c3-logo">&lt;&lt;MC25</span></div>
         </div>
 
         <!-- Title Section -->
@@ -25,83 +25,11 @@
                 <span class="title-label-italic">Departure</span>
                 <span class="title-label-italic">Départ</span>
             </div>
-            <div class="station-name">Chaos Communication Congress</div>
+            <div class="station-name">The Matrix Conference</div>
         </div>
 
         <!-- Column Headers - Repeated 8 times -->
         <div class="column-headers-wrapper">
-            <div class="column-headers">
-                <div>
-                    <div class="column-header-bold">Zeit</div>
-                    <div class="column-header-italic">Time</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Zug</div>
-                    <div class="column-header-italic">Train</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Richtung</div>
-                    <div class="column-header-italic">Destination</div>
-                </div>
-                <div class="col-platform">
-                    <div class="column-header-bold">Gleis</div>
-                    <div class="column-header-italic">Platform</div>
-                </div>
-            </div>
-            <div class="column-headers">
-                <div>
-                    <div class="column-header-bold">Zeit</div>
-                    <div class="column-header-italic">Time</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Zug</div>
-                    <div class="column-header-italic">Train</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Richtung</div>
-                    <div class="column-header-italic">Destination</div>
-                </div>
-                <div class="col-platform">
-                    <div class="column-header-bold">Gleis</div>
-                    <div class="column-header-italic">Platform</div>
-                </div>
-            </div>
-            <div class="column-headers">
-                <div>
-                    <div class="column-header-bold">Zeit</div>
-                    <div class="column-header-italic">Time</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Zug</div>
-                    <div class="column-header-italic">Train</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Richtung</div>
-                    <div class="column-header-italic">Destination</div>
-                </div>
-                <div class="col-platform">
-                    <div class="column-header-bold">Gleis</div>
-                    <div class="column-header-italic">Platform</div>
-                </div>
-            </div>
-            <div class="column-headers">
-                <div>
-                    <div class="column-header-bold">Zeit</div>
-                    <div class="column-header-italic">Time</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Zug</div>
-                    <div class="column-header-italic">Train</div>
-                </div>
-                <div>
-                    <div class="column-header-bold">Richtung</div>
-                    <div class="column-header-italic">Destination</div>
-                </div>
-                <div class="col-platform">
-                    <div class="column-header-bold">Gleis</div>
-                    <div class="column-header-italic">Platform</div>
-                </div>
-            </div>
             <div class="column-headers">
                 <div>
                     <div class="column-header-bold">Zeit</div>
@@ -184,23 +112,24 @@
         <script>
             (async () => {
                 // Event-specific configuration
-                const scheduleUrl = 'https://api.events.ccc.de/congress/2025/schedule.json';
+                const scheduleUrl = 'https://cfp.2025.matrix.org/matrix-conf-2025/schedule/export/schedule.json';
                 const trackMap = {
-                    'Art & Beauty': 'ART',
-                    'CCC & Community': 'CCC',
-                    'Entertainment': 'FUN',
-                    'Ethics, Society & Politics': 'ESP',
-                    'Hardware': 'HARD',
-                    'Science': 'SCI',
-                    'Security': 'SEC',
-                    'DJ-Set': 'DJ',
-                    'Live Performance': 'LP',
+                    'Keynote': 'KEY',
+                    'Public Sector': 'PUB',
+                    'Healthcare': 'HEA',
+                    'Security & Encryption': 'ENC',
+                    'Beyond Chat': 'BEY',
+                    'Business with Matrix': 'BUS',
+                    'Hands-on': 'HO',
+                    'Matrix in Education': 'EDU',
+                    'Privacy, Policy & Moderation': 'PPM',
+                    'Bots & Bridges': 'B&B',
                     null: 'NAT',
                     undefined: 'NAT',
                 };
                 const totalDays = 4;
-                const headerDateRange = '27.12.2025 – 30.12.2025';
-                const stationName = 'Chaos Communication Congress';
+                const headerDateRange = '15.10.2025 – 18.10.2025';
+                const stationName = 'The Matrix Conference';
                 const timeRanges = [
                     { start: 9, end: 11, label: '9.00 — 11.00' },
                     { start: 12, end: 13, label: '12.00 — 13.00' },
@@ -284,25 +213,9 @@
 
                 // Room abbreviations/icons
                 const abbreviateRoom = (roomName) => {
-                    if (roomName === 'One') return '1';
-                    if (roomName === 'Zuse') return 'Z';
-                    if (roomName === 'Fuse') return 'F';
-                    if (roomName === 'Ground') return 'G';
-                    if (roomName === 'Two') return '2';
-                    if (roomName === 'Zero') return '0';
-                    if (roomName === 'SoS Saal 6') return '6';
-                    if (roomName.includes('Stonewall IO')) return 'Y';
-                    if (roomName.includes('Hardware Hacking Area')) return '<i data-lucide="wrench"></i>';
-                    if (roomName.includes('Bits&Bäume')) return '<i data-lucide="trees"></i>';
-                    if (roomName === 'House of Tea') return '<i data-lucide="coffee"></i>';
-                    if (roomName.includes('Sendezentrum')) return '<i data-lucide="mic-vocal"></i>';
-                    if (roomName === 'Chaos Computer Music Club') return '<i data-lucide="music"></i>';
-                    if (roomName === 'Chill Floor') return '<i data-lucide="armchair"></i>';
-                    if (roomName === 'Komonin') return '<i data-lucide="door-open"></i>';
-                    if (roomName.startsWith('SoS Stage ') || roomName.startsWith('SoS Lecture ') || roomName.startsWith('SoS Workshop ')) {
-                        return roomName.split(' ').pop();
-                    }
-                    if (roomName.startsWith('Kidspace')) return '<i data-lucide="toy-brick"></i>';
+                    if (roomName === 'Ada Byron') return 'B';
+                    if (roomName === 'Alan Turing') return 'T';
+                    if (roomName === 'Lynn Conway') return 'C';
                     return '*';
                 };
 
@@ -344,8 +257,7 @@
                             : '';
 
                     const roomAbbrev = abbreviateRoom(row.roomName);
-                    const redRoomsList = ['1', '0', 'F', 'G'];
-                    const trainClass = redRoomsList.includes(roomAbbrev) ? ' train-number-red' : '';
+                    const trainClass = trackCode === 'KEY' ? ' train-number-red' : '';
                     const trainId = row.id.toString().substring(0, 5);
                     const longNumClass = trainId.length > 2 ? ' train-num-long' : '';
                     const roomNameDisplay = roomAbbrev.includes('*') ? ` <span class="room-name">* ${row.roomName}</span>` : '';
@@ -389,12 +301,7 @@
                 <div class="legend-group">
                         <h4>Events im Hauptverkehr/Main stage events/trains grandes lignes</h4>
                         <table class="legend-table">
-                                <tr><td>ART</td><td>Art & Beauty</td></tr>
-                                <tr><td>CCC</td><td>CCC & Community</td></tr>
-                                <tr><td>HARD</td><td>Hardware</td></tr>
-                                <tr><td>ESP</td><td>Ethics, Society & Politics</td></tr>
-                                <tr><td>SCI</td><td>Science</td></tr>
-                                <tr><td>SEC</td><td>Security</td></tr>
+                                <tr><td>KEY</td><td>Keynote</td></tr>
                         </table>
                 </div>
 
@@ -403,9 +310,15 @@
                 <div class="legend-group">
                         <h4>Alle anderen Einträge/All other entries/Tous les autres</h4>
                         <table class="legend-table">
-                                <tr><td>KID</td><td>Kidspace</td></tr>
-                                <tr><td>DJ</td><td>DJ-Set</td></tr>
-                                <tr><td>LP</td><td>Live Performance</td></tr>
+                                <tr><td>PUB</td><td>Public Sector</td></tr>
+                                <tr><td>HEA</td><td>Healthcare</td></tr>
+                                <tr><td>ENC</td><td>Security & Encryption</td></tr>
+                                <tr><td>BEY</td><td>Beyond Chat</td></tr>
+                                <tr><td>BUS</td><td>Business with Matrix</td></tr>
+                                <tr><td>HO</td><td>Hands-on</td></tr>
+                                <tr><td>EDU</td><td>Matrix in Education</td></tr>
+                                <tr><td>PPM</td><td>Privacy, Policy & Moderation</td></tr>
+                                <tr><td>B&B</td><td>Bots & Bridges</td></tr>
                                 <tr><td>NAT</td><td>Not a Track</td></tr>
                         </table>
                 </div>
@@ -418,14 +331,6 @@
                                 <tr><td><i data-lucide="video"></i></td><td>Diese Fahrt wird zu Schulungszwecken aufgezeichnet</td></tr>
                                 <tr><td><i data-lucide="video-off"></i></td><td>Diese Fahrt ist geplant kaputt</td></tr>
                                 <tr><td><i data-lucide="circle-dot"></i></td><td>bis hier sind alle Halte angegeben</td></tr>
-                                <tr><td><i data-lucide="toy-brick"></i></td><td>hält nur in Kidspace</td></tr>
-                                <tr><td><i data-lucide="mic-vocal"></i></td><td>hält nur in Sendezentrum</td></tr>
-                                <tr><td><i data-lucide="coffee"></i></td><td>hält nur in House of Tea</td></tr>
-                                <tr><td><i data-lucide="wrench"></i></td><td>hält nur in Hardware Hacking Area</td></tr>
-                                <tr><td><i data-lucide="music"></i></td><td>hält nur in Chaos Computer Music Club</td></tr>
-                                <tr><td><i data-lucide="armchair"></i></td><td>hält nur in Chill Floor</td></tr>
-                                <tr><td><i data-lucide="door-open"></i></td><td>hält nur in Komonin</td></tr>
-                                <tr><td><i data-lucide="trees"></i></td><td>hält nur in Bits&Bäume</td></tr>
                         </table>
                 </div>
 
@@ -433,8 +338,8 @@
 
                 <div class="legend-group">
                         <h4>Als allgemeine Feiertage gelten:</h4>
-                        <div>Tag 0 bis Tag 4: 26.12. bis 30.12.</div>
-                        <div>Digital Independence Day (DI.DAY)</div>
+                        <div>Tag 1 bis Tag 4: 15.10. bis 18.10.</div>
+                        <div>This Week in Matrix Day (TWIMday)</div>
                 </div>
 
                 <div style="height: 1em;"></div>
@@ -442,10 +347,9 @@
                 <div class="legend-footer">
                         Berichtigt werden nur die im CCH abgehängten Fahrpläne./Only Fahrpläne removed from display in CCH will be corrected./Seulement les Fahrpläne retirés de l'affichage dans le CCH seront corrigés.<br><br>
                         Angaben mit Gewähr - Änderungen und Irrtümer vorbehalten.<br><br>
-                        * Du suchst hier leider an der falschen Stelle.<br><br>
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://bahnhof.de" alt="QR Code" class="qr-code-placeholder">
-                        Von Anton und Felix.
-                        Bei Feedback und Änderungsvorschlägen siehe <a href="https://github.com/felixdivo/c3-fahrplan-druck" target="_blank">github.com/felixdivo/c3-fahrplan-druck</a>.<br><br>
+                        Von Anton und Felix, adaptiert von Kim.
+                        Bei Feedback und Änderungsvorschlägen siehe <a href="https://github.com/HarHarLinks/c3-fahrplan-druck" target="_blank">github.com/HarHarLinks/c3-fahrplan-druck</a>.<br><br>
 
                         Datenstand: ${formattedVersion}<br><br>
 

@@ -50,14 +50,14 @@
 
 @page {
   size: portrait;
-  width: 914.4mm; /* DIN A0+ with margins */
+  width: calc(914.4mm/2); /* DIN A0+ with margins */
   height: auto;
   margin: 10mm; /* adjust as needed */
 }
 
 @media print {
   html, body {
-    width: 914.4mm; /* DIN A0+ with margins */
+    width: calc(914.4mm/2); /* DIN A0+ with margins */
     height: auto;
     overflow: visible;
   }
@@ -80,7 +80,7 @@ body {
     font-family: 'OfficerSans', "Segoe UI", Arial, sans-serif;
     background-color: white;
     padding: 40px;
-    width: 914.4mm;
+    width: calc(914.4mm/2);
     margin: 0;
     overflow: visible;
 }
@@ -169,7 +169,7 @@ noscript {
 
 .column-headers-wrapper {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 12px;
     row-gap: 0;
     width: 100%;
@@ -266,9 +266,9 @@ noscript {
 
 .departure-table {
     display: block;
-    column-count: 8;
-    -moz-column-count: 8;
-    -webkit-column-count: 8;
+    column-count: 4;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
     column-gap: 12px;
     -moz-column-gap: 12px;
     -webkit-column-gap: 12px;
