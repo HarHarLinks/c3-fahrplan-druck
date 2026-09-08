@@ -14,8 +14,8 @@
     <div class="schedule-container">
         <!-- Header -->
         <div class="header">
-            <div class="header-left">15.10.2025 – 18.10.2025</div>
-            <div class="header-right"><span class="c3-logo">&lt;&lt;MC25</span></div>
+            <div class="header-left">20.10.2026 – 23.10.2026</div>
+            <div class="header-right"><span class="c3-logo">&lt;&lt;MC26</span></div>
         </div>
 
         <!-- Title Section -->
@@ -112,23 +112,26 @@
         <script>
             (async () => {
                 // Event-specific configuration
-                const scheduleUrl = 'https://cfp.2025.matrix.org/matrix-conf-2025/schedule/export/schedule.json';
+                const scheduleUrl = 'https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.json';
                 const trackMap = {
+                    'Workshop': 'WRK',
                     'Keynote': 'KEY',
                     'Public Sector': 'PUB',
-                    'Healthcare': 'HEA',
-                    'Security & Encryption': 'ENC',
-                    'Beyond Chat': 'BEY',
-                    'Business with Matrix': 'BUS',
-                    'Hands-on': 'HO',
-                    'Matrix in Education': 'EDU',
-                    'Privacy, Policy & Moderation': 'PPM',
-                    'Bots & Bridges': 'B&B',
+                    'Public Sector sponsored by Element': 'PUB',
+                    'Healthcare sponsored by CGM': 'HEA',
+                    'Cryptography': 'CPT',
+                    'Lightning Talks': 'LGH',
+                    'Matrix inside': 'INS',
+                    'In Practice': 'PRX',
+                    'Digital Sovereignty': 'SOV',
+                    'Growing a network': 'NET',
+                    'Next Gen Spec': 'NGS',
+                    'Foundation': 'FDN',
                     null: 'NAT',
                     undefined: 'NAT',
                 };
-                const totalDays = 4;
-                const headerDateRange = '15.10.2025 – 18.10.2025';
+                const totalDays = 2;
+                const headerDateRange = '20.10.2026 – 23.10.2026';
                 const stationName = 'The Matrix Conference';
                 const timeRanges = [
                     { start: 9, end: 11, label: '9.00 — 11.00' },
@@ -213,9 +216,10 @@
 
                 // Room abbreviations/icons
                 const abbreviateRoom = (roomName) => {
-                    if (roomName === 'Ada Byron') return 'B';
-                    if (roomName === 'Alan Turing') return 'T';
-                    if (roomName === 'Lynn Conway') return 'C';
+                    if (roomName === 'Sofya') return 'S';
+                    if (roomName === 'Katherine') return 'K';
+                    if (roomName === 'Peter') return 'P';
+                    if (roomName === 'Workshop') return 'W';
                     return '*';
                 };
 
@@ -310,16 +314,19 @@
                 <div class="legend-group">
                         <h4>Alle anderen Einträge/All other entries/Tous les autres</h4>
                         <table class="legend-table">
-                                <tr><td>PUB</td><td>Public Sector</td></tr>
-                                <tr><td>HEA</td><td>Healthcare</td></tr>
-                                <tr><td>ENC</td><td>Security & Encryption</td></tr>
-                                <tr><td>BEY</td><td>Beyond Chat</td></tr>
-                                <tr><td>BUS</td><td>Business with Matrix</td></tr>
-                                <tr><td>HO</td><td>Hands-on</td></tr>
-                                <tr><td>EDU</td><td>Matrix in Education</td></tr>
-                                <tr><td>PPM</td><td>Privacy, Policy & Moderation</td></tr>
-                                <tr><td>B&B</td><td>Bots & Bridges</td></tr>
-                                <tr><td>NAT</td><td>Not a Track</td></tr>
+                                <tr><td>WRK</td><td>Workshop</td></tr>
+                                <tr><td>KEY</td><td>Keynote<td></tr>
+                                <tr><td>PUB</td><td>Public Sector sponsored by Element</td></tr>
+                                <tr><td>PUB</td><td>Public Sector (Day 3)</td></tr>
+                                <tr><td>HEA</td><td>Healthcare sponsored by CGM</td></tr>
+                                <tr><td>CPT</td><td>Cryptography</td></tr>
+                                <tr><td>LGH</td><td>Lightning Talks</td></tr>
+                                <tr><td>INS</td><td>Matrix inside</td></tr>
+                                <tr><td>PRX</td><td>In Practice</td></tr>
+                                <tr><td>SOV</td><td>Digital Sovereignty</td></tr>
+                                <tr><td>NET</td><td>Growing a network<td></tr>
+                                <tr><td>NGS</td><td>Next Gen Spec</td></tr>
+                                <tr><td>FDN</td><td>Foundation</td></tr>
                         </table>
                 </div>
 
@@ -338,18 +345,18 @@
 
                 <div class="legend-group">
                         <h4>Als allgemeine Feiertage gelten:</h4>
-                        <div>Tag 1 bis Tag 4: 15.10. bis 18.10.</div>
+                        <div>Tag 1 bis Tag 4: 20.10. bis 23.10.</div>
                         <div>This Week in Matrix Day (TWIMday)</div>
                 </div>
 
                 <div style="height: 1em;"></div>
 
                 <div class="legend-footer">
-                        Berichtigt werden nur die im CCH abgehängten Fahrpläne./Only Fahrpläne removed from display in CCH will be corrected./Seulement les Fahrpläne retirés de l'affichage dans le CCH seront corrigés.<br><br>
+                        Berichtigt werden nur die im Scandic Triangeln abgehängten Fahrpläne./Only Fahrpläne removed from display in Scandic Triangeln will be corrected./Seulement les Fahrpläne retirés de l'affichage dans le Scandic Triangeln seront corrigés.<br><br>
                         Angaben mit Gewähr - Änderungen und Irrtümer vorbehalten.<br><br>
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://bahnhof.de" alt="QR Code" class="qr-code-placeholder">
                         Von Anton und Felix, adaptiert von Kim.
-                        Bei Feedback und Änderungsvorschlägen siehe <a href="https://github.com/HarHarLinks/c3-fahrplan-druck/tree/MC25" target="_blank">github.com/HarHarLinks/c3-fahrplan-druck/tree/MC25</a>.<br><br>
+                        Bei Feedback und Änderungsvorschlägen siehe <a href="https://github.com/HarHarLinks/c3-fahrplan-druck/tree/MC26" target="_blank">github.com/HarHarLinks/c3-fahrplan-druck/tree/MC26</a>.<br><br>
 
                         Datenstand: ${formattedVersion}<br><br>
 
@@ -404,7 +411,7 @@
                     });
 
                     // Legend footer text (original)
-                    const legend = renderLegend(formattedVersion, `Dieses Fahplan ist bis Tag ${totalDays} (17:00) Eigentum der Chaosland Bahn. Danach geht er in die chaotische Selbstverwaltung über und darf legal entwendet werden.`);
+                    const legend = renderLegend(formattedVersion, `Dieses Fahplan ist bis Tag ${totalDays} (17:00) Eigentum der Events WG. Danach geht er in die chaotische Selbstverwaltung über und darf legal entwendet werden.`);
                     departureTable.insertAdjacentHTML('beforeend', legend);
                 } else {
                     // Single-day view
